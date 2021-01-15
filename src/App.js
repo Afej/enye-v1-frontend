@@ -20,12 +20,13 @@ const App = () => {
       setLoading(true);
       const res = await axios.get("https://api.enye.tech/v1/challenge/records");
       const profiles = res.data.records.profiles;
+      console.log(profiles);
       setUsers(profiles);
       setLoading(false);
     };
 
     fetchUsers();
-  }, [query]);
+  }, []);
 
   // Get current users
   const indexOfLastUser = currentPage * usersPerPage;
@@ -35,13 +36,27 @@ const App = () => {
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  // Handle search query
+  const handleQuery = (e) => {
+    e.preventDefault();
+    setCurrentPage(1);
+    console.log(query);
+    const searchRes = users.filter(
+      (user) =>
+        user.FirstName.toLowerCase() === query.toLowerCase() ||
+        user.LastName.toLowerCase() === query.toLowerCase()
+    );
+
+    setUsers(searchRes);
+  };
+
   return (
     <div className="container">
       {/* header */}
       <Header />
 
       {/* search  */}
-      <Search getQuery={(q) => setQuery(q)} />
+      <Search getQuery={(q) => setQuery(q)} handleQuery={handleQuery} />
 
       {/* filter */}
       <Filter />
@@ -54,6 +69,7 @@ const App = () => {
         usersPerPage={usersPerPage}
         totalUsers={users.length}
         paginate={paginate}
+        currentPage={currentPage}
       />
     </div>
   );

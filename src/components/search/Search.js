@@ -1,22 +1,17 @@
 import React, { useState } from "react";
 import "./search.scss";
 
-const Search = ({ getQuery }) => {
+const Search = ({ getQuery, handleQuery }) => {
   const [text, setText] = useState("");
 
   const onChange = (q) => {
     setText(q);
-    // getQuery(q);
-  };
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    console.log("submitted");
+    getQuery(q);
   };
 
   return (
     <section className="search-wrapper">
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleQuery}>
         <input
           type="text"
           className="search-input"

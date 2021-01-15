@@ -1,9 +1,19 @@
 nav {
-  max-width: 600px;
+  max-width: max-content;
   margin: auto;
   padding: 2rem;
-}
-.pagination {
-  display: flex;
-  justify-content: space-evenly;
+
+  .pagination {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .page-item {
+    margin: 1rem;
+    padding: 1rem;
+
+    &.active {
+      border-bottom: 2px solid red;
+    }
+  }
 }
