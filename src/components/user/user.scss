@@ -2,4 +2,39 @@
   background: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   padding: 10px;
+
+  .gender {
+    & .icon {
+      font-size: 18px;
+
+      &.male {
+        color: skyblue;
+      }
+
+      &.female {
+        color: pink;
+      }
+
+      &.wink {
+        color: yellow;
+      }
+    }
+  }
+
+  .btn {
+    padding: 5px 10px;
+    margin: 10px auto;
+    border: 2px solid #fff;
+    background: transparent;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    float: right;
+    cursor: pointer;
+
+    a {
+      color: #fff;
+    }
+  }
 }

@@ -5,7 +5,7 @@
   margin: 3rem auto;
   // padding: 0 1rem;
 
-  .error {
+  .error-text {
     margin: 0 auto;
     grid-column-start: 2;
     color: white;
@@ -16,6 +16,10 @@
   }
 
   @media (max-width: 786px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+
+    .error-text {
+      grid-column-start: 1;
+    }
   }
 }

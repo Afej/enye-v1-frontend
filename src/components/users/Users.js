@@ -13,7 +13,7 @@ const Users = ({ query, users, loading }) => {
       {users.length ? (
         users.map((user) => <User key={user.UserName} user={user} />)
       ) : (
-        <p className="error">
+        <p className="error-text">
           No Results for <span> "{query}" </span>
           Found.
         </p>

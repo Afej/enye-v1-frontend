@@ -1,20 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./user.scss";
 
 const User = ({ user }) => {
   return (
     <div className="user">
       <h1>{`${user.FirstName} ${user.LastName}`}</h1>
-      <p>
-        {user.Gender}{" "}
+      <p className="gender">
+        Gender : {user.Gender}{" "}
         {user.Gender === "Male" ? (
-          <i className="fas fa-male"></i>
+          <i className="icon fas fa-male male"></i>
         ) : user.Gender === "Female" ? (
-          <i className="fas fa-female"></i>
+          <i className="icon fas fa-female female"></i>
         ) : (
-          <i className="far fa-smile-wink"></i>
+          <i className="icon far fa-smile-wink wink"></i>
         )}
       </p>
+      <p className="payment-method">Payment Method: {user.PaymentMethod}</p>
+
+      <button className="btn">
+        <Link to="/user/:id">View more</Link>
+      </button>
     </div>
   );
 };
