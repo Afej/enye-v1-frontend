@@ -1,7 +1,12 @@
 .user {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px 20px;
+
+  h1,
+  p {
+    margin: 15px 0;
+  }
 
   .gender {
     & .icon {

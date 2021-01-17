@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./user.scss";
 
-const User = ({ user }) => {
+const User = ({ user, showDetails }) => {
   return (
     <div className="user">
       <h1>{`${user.FirstName} ${user.LastName}`}</h1>
@@ -18,8 +17,8 @@ const User = ({ user }) => {
       </p>
       <p className="payment-method">Payment Method: {user.PaymentMethod}</p>
 
-      <button className="btn">
-        <Link to="/user/:id">View more</Link>
+      <button className="btn" onClick={showDetails}>
+        View more
       </button>
     </div>
   );
