@@ -1,28 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import "./search.scss";
 
-const Search = ({ getQuery, handleQuery }) => {
-  const [text, setText] = useState("");
-
-  const onChange = (q) => {
-    setText(q);
-    getQuery(q);
-  };
-
+const Search = ({ query, onChange }) => {
   return (
     <section className="search-wrapper">
-      <form onSubmit={handleQuery}>
+      <form>
         <input
           type="text"
+          name="search"
           className="search-input"
           placeholder="Search for a profile"
-          value={text}
-          onChange={(e) => onChange(e.target.value)}
+          value={query}
+          onChange={onChange}
           autoFocus
         />
-        <button type="submit" className="search-btn">
+        {/* <button type="submit" className="search-btn">
           Search
-        </button>
+        </button> */}
       </form>
     </section>
   );

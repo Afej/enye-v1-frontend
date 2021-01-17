@@ -3,16 +3,21 @@ import Spinner from "../spinner/Spinner";
 import User from "../user/User";
 import "./users.scss";
 
-const Users = ({ users, loading }) => {
+const Users = ({ query, users, loading }) => {
   if (loading) {
     return <Spinner />;
   }
 
   return (
     <section className="user-grid">
-      {users.map((user) => (
-        <User key={user.UserName} user={user} />
-      ))}
+      {users.length ? (
+        users.map((user) => <User key={user.UserName} user={user} />)
+      ) : (
+        <p className="error">
+          No Results for <span> "{query}" </span>
+          Found.
+        </p>
+      )}
     </section>
   );
 };
