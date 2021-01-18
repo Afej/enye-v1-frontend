@@ -12,7 +12,6 @@ const Search = ({ query, onChange }) => {
           placeholder="Search by Name"
           value={query}
           onChange={onChange}
-          autoFocus
         />
         {/* <button type="submit" className="search-btn">
           Search
