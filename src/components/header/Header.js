@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       <h1>Users Profiles</h1>
-      <p>Discover and reconnect with friends.</p>
+      <p>Search for a specific profile.</p>
     </header>
   );
 };

@@ -5,7 +5,15 @@ import UserDetails from "../user/UserDetails";
 
 import "./users.scss";
 
-const Users = ({ query, users, loading }) => {
+const Users = ({
+  query,
+  users,
+  loading,
+  indexOfFirstUser,
+  indexOfLastUser,
+  isLastPage,
+  totalUsers,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState({});
 
@@ -15,6 +23,19 @@ const Users = ({ query, users, loading }) => {
 
   return (
     <Fragment>
+      <>
+        {users.length ? (
+          <p className="results">
+            Showing{" "}
+            {`${indexOfFirstUser + 1} - ${
+              isLastPage ? totalUsers : indexOfLastUser
+            }`}{" "}
+            of {totalUsers}
+          </p>
+        ) : (
+          ""
+        )}
+      </>
       <section className="user-grid">
         {users.length ? (
           users.map((user) => (

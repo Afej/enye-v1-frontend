@@ -2,7 +2,7 @@ import ReactDOM from "react-dom";
 // import React from "react";
 import "./user-details.scss";
 
-const UserDetails = (props) => {
+const UserDetails = ({ data, isOpen, closeModal }) => {
   const {
     CreditCardNumber,
     CreditCardType,
@@ -19,15 +19,15 @@ const UserDetails = (props) => {
     PhoneNumber,
     URL,
     UserName,
-  } = props.data;
+  } = data;
 
-  if (!props.isOpen) return null;
+  if (!isOpen) return null;
 
   return ReactDOM.createPortal(
     <>
-      <div className="modalBackground" onClick={props.closeModal}></div>
+      <div className="modalBackground" onClick={closeModal}></div>
       <div className="profileModal">
-        <button id="closeModalBtn" onClick={props.closeModal}>
+        <button id="closeModalBtn" onClick={closeModal}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 320 512"
@@ -105,21 +105,6 @@ const UserDetails = (props) => {
             <span className="label">Location:</span>
             <small>Latitude: {Latitude},</small>
             <small>Longitude: {Longitude}</small>
-            <iframe
-              title="map"
-              src={`https://maps.google.com/maps?q=${Latitude},${Longitude}&z=10&output=embed`}
-              frameborder="0"
-              style={{
-                border: 0,
-                width: "100%",
-                height: "10rem",
-                alignSelf: "center",
-                margin: "1rem 0",
-              }}
-              allowfullscreen=""
-              aria-hidden="false"
-              tabindex="0"
-            ></iframe>
           </p>
         </div>
       </div>

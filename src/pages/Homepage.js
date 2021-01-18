@@ -64,6 +64,7 @@ const Homepage = () => {
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
+  const isLastPage = indexOfLastUser >= filteredUsers.length;
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -84,7 +85,15 @@ const Homepage = () => {
       />
 
       {/* users  */}
-      <Users users={currentUsers} loading={loading} query={query} />
+      <Users
+        users={currentUsers}
+        loading={loading}
+        query={query}
+        indexOfFirstUser={indexOfFirstUser}
+        indexOfLastUser={indexOfLastUser}
+        isLastPage={isLastPage}
+        totalUsers={filteredUsers.length}
+      />
 
       {/* pagination */}
       <Pagination

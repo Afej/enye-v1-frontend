@@ -9,7 +9,7 @@ const Search = ({ query, onChange }) => {
           type="text"
           name="search"
           className="search-input"
-          placeholder="Search for a profile"
+          placeholder="Search by Name"
           value={query}
           onChange={onChange}
           autoFocus

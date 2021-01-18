@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./pagination.scss";
 
 const Pagination = ({ usersPerPage, totalUsers, currentPage, paginate }) => {
@@ -17,15 +16,15 @@ const Pagination = ({ usersPerPage, totalUsers, currentPage, paginate }) => {
             key={number}
             className={`page-item ${currentPage === number ? "active" : ""}`}
           >
-            <Link
+            <a
               onClick={() => {
                 paginate(number);
               }}
-              to="#"
+              href="!#"
               className="page-link"
             >
               {number}
-            </Link>
+            </a>
           </li>
         ))}
       </ul>
