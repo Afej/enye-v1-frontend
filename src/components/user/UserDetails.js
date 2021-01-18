@@ -60,10 +60,6 @@ const UserDetails = ({ data, isOpen, closeModal }) => {
             <span className="label">Domain Name:</span>
             {DomainName}
           </p>
-          <p>
-            <span className="label">Last Login:</span>
-            {LastLogin}
-          </p>
         </div>
         <div className="contact-info">
           <h3>Contact Information</h3>
@@ -102,6 +98,10 @@ const UserDetails = ({ data, isOpen, closeModal }) => {
             {MacAddress}
           </p>
           <p>
+            <span className="label">Last Login:</span>
+            {LastLogin}
+          </p>
+          <p>
             <span className="label">Location:</span>
             <small>Latitude: {Latitude},</small>
             <small>Longitude: {Longitude}</small>
@@ -109,7 +109,7 @@ const UserDetails = ({ data, isOpen, closeModal }) => {
         </div>
       </div>
     </>,
-    document.getElementById("modals")
+    document.getElementById("modal")
   );
 };
 

@@ -18,7 +18,7 @@ const User = ({ user, showDetails }) => {
       <p className="payment-method">Payment Method: {user.PaymentMethod}</p>
 
       <button className="btn" onClick={showDetails}>
-        View more
+        More details
       </button>
     </div>
   );

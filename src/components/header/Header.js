@@ -4,7 +4,7 @@ import "./header.scss";
 const Header = () => {
   return (
     <header>
-      <h1>Users Profiles</h1>
+      <h1>Profiles Records</h1>
       <p>Search for a specific profile.</p>
     </header>
   );
