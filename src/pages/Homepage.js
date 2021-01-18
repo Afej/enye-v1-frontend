@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import Users from "../components/users/Users";
 import Search from "../components/search/Search";
@@ -69,8 +69,16 @@ const Homepage = () => {
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  const containerRef = useRef(null);
+
+  const scrollToTop = () => {
+    setTimeout(() => {
+      containerRef.current.scrollIntoView();
+    }, 0);
+  };
+
   return (
-    <div className="container">
+    <div className="container" ref={containerRef}>
       {/* header */}
       <Header />
 
@@ -101,6 +109,7 @@ const Homepage = () => {
         totalUsers={filteredUsers.length}
         paginate={paginate}
         currentPage={currentPage}
+        scrollToTop={scrollToTop}
       />
     </div>
   );

@@ -6,7 +6,6 @@
 
   @media (max-width: 500px) {
     flex-direction: column;
-    gap: 15px;
   }
 
   .gender,
@@ -14,6 +13,10 @@
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     padding: 10px;
+
+    @media (max-width: 500px) {
+      margin-top: 15px;
+    }
   }
 
   label {

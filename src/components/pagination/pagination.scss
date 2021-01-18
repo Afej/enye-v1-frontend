@@ -9,11 +9,21 @@ nav {
   }
 
   .page-item {
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+
+    button {
+      padding: 0.5rem;
+      font-size: 15px;
+      cursor: pointer;
+    }
 
     &.active {
       border-bottom: 2px solid red;
+    }
+
+    @media (max-width: 500px) {
+      margin: 0;
     }
   }
 }

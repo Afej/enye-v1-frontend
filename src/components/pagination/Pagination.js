@@ -1,7 +1,13 @@
 import React from "react";
 import "./pagination.scss";
 
-const Pagination = ({ usersPerPage, totalUsers, currentPage, paginate }) => {
+const Pagination = ({
+  usersPerPage,
+  totalUsers,
+  currentPage,
+  paginate,
+  scrollToTop,
+}) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++) {
@@ -16,15 +22,15 @@ const Pagination = ({ usersPerPage, totalUsers, currentPage, paginate }) => {
             key={number}
             className={`page-item ${currentPage === number ? "active" : ""}`}
           >
-            <a
+            <button
               onClick={() => {
                 paginate(number);
+                scrollToTop();
               }}
-              href="!#"
               className="page-link"
             >
               {number}
-            </a>
+            </button>
           </li>
         ))}
       </ul>
